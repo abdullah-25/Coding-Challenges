@@ -6,19 +6,17 @@ const fileName = process.argv[2];
 
 
 fs.readFile(fileName,'utf8', (err, data) => {
-
 	if (err) {
 		console.error(err);
 		return;
 	}
-
 	try {
        	if (isValidJSON(data)) {
-        console.log('valid json file');
-        process.exit(0);
+            console.log('valid json file');
+            process.exit(0);
     } else {
-        console.log('invalid json file');
-        process.exit(1);
+            console.log('invalid json file');
+            process.exit(1);
         }
     } catch (error) {
         	console.error('invalid json file', error);
